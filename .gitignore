@@ -1,1 +1,5 @@
 .idea/
+!/Configs/.gitkeep
+!/Plugins/.gitkeep
+Configs/
+Plugins/
