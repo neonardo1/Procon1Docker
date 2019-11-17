@@ -1,0 +1,10 @@
+gsp:
+  extends:
+    file: /path/to/central/repo/docker-compose.yml
+    service: procon
+  environment:
+    - INSTANCE_NAME=procon_user_prophet731_1
+    - LAYER_PORT=27260 # This can be any available port
+    - CONFIG_PATH=/home/prophet731/instance1/Config
+    - PLUGINS_PATH=/home/prophet731/instance1/Plugins
+    - LOGS_PATHS=/home/prophet731/instance1/Logs

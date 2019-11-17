@@ -1,7 +1,7 @@
 version: '2.4'
 services:
-  procon1:
-    container_name: procon1
+  procon:
+    container_name: ${INSTANCE_NAME}
     build:
       context: .
     image: prophet731/procon:develop
