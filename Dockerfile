@@ -1,16 +1,24 @@
 FROM mono:latest
 
-RUN mkdir -p /procon && \
-	apt-get update && \
-	apt-get install unzip wget -y && \
-	wget -O /tmp/procon.zip https://api.myrcon.net/procon/download?p=docker && \
-	unzip -x /tmp/procon.zip -d /procon/ && \
-    rm -f /tmp/procon.zip
-	
-WORKDIR /procon
+ARG UID=10000
+ARG GID=10000
+ARG PATH=/opt/procon
+ARG FILE="procon.zip"
+ARG DLURL="https://api.myrcon.net/procon/download?p=docker"
 
-VOLUME /procon/Configs ./Configs
-VOLUME /procon/Plugins ./Plugins
+RUN mkdir -p $PATH
+RUN apt-get update && apt-get install unzip wget -yqq
+RUN wget -O /tmp/$FILE $DLURL && unzip -x /tmp/$FILE -d $PATH
+RUN rm -f /tmp/$FILE
+
+RUN groupadd -r -g $GID procon && useradd -r -g procon -u $UID procon
+RUN chown procon:procon -R $PATH
+	
+WORKDIR $PATH
+
+USER procon:procon
+
+VOLUME ["$PATH/Configs", "$PATH/Plugins"]
 
 EXPOSE 27260
 
