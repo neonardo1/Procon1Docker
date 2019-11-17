@@ -9,8 +9,8 @@ RUN mkdir -p /procon && \
 	
 WORKDIR /procon
 
-ADD Configs/ /procon
-ADD Plugins/ /procon
+VOLUME /procon/Configs ./Configs
+VOLUME /procon/Plugins ./Plugins
 
 EXPOSE 27260
 
