@@ -1,3 +1,10 @@
-# Procon1Docker
+# Introduction
 
-See the Examples folder for how to add a server.
+More to be written later.
+
+# Getting Started
+
+Running the docker
+```
+docker run prophet731/procon:1.5.3.0
+```
