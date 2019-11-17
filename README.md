@@ -6,5 +6,15 @@ More to be written later.
 
 Running the docker
 ```
-docker run prophet731/procon:1.5.3.0
+docker-compose -f gsp.yml up -d
+```
+
+Restarting the docker
+```
+docker-compose -f gsp.yml restart
+```
+
+Stopping the docker
+```
+docker-compose -f gsp.yml down -d
 ```
