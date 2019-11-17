@@ -6,6 +6,7 @@ services:
       context: .
     image: prophet731/procon:develop
     restart: on-failure
+    network_mode: bridge
     ports:
       - ${LAYER_PORT}:27260
     volumes:
