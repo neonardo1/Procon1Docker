@@ -3,3 +3,4 @@
 !/Plugins/.gitkeep
 Configs/
 Plugins/
+.env
