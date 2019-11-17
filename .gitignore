@@ -1,6 +1,4 @@
 .idea/
-!/Configs/.gitkeep
-!/Plugins/.gitkeep
-Configs/
-Plugins/
+Configs/procon.cfg
+Configs/accounts.cfg
 .env
