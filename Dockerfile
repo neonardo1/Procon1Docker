@@ -3,7 +3,7 @@ FROM mono:latest
 RUN mkdir -p /procon && \
 	apt-get update && \
 	apt-get install unzip wget -y && \
-	wget -O /tmp/procon.zip https://api.myrcon.net/procon/download && \
+	wget -O /tmp/procon.zip https://api.myrcon.net/procon/download?p=docker && \
 	unzip -x /tmp/procon.zip -d /procon/ && \
     rm -f /tmp/procon.zip
 	
