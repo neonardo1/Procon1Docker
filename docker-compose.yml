@@ -5,25 +5,24 @@ services:
     build:
       context: .
     image: prophet731/procon:develop
-    restart: unless-stopped
+    restart: on-failure
     ports:
-      - "27260:27260"
+      - ${LAYER_PORT}:27260
     volumes:
       - type: volume
-        source: config1
+        source: ${CONFIG_PATH}
         target: /opt/procon/Configs
       - type: volume
-        source: plugin1
+        source: ${PLUGINS_PATH}
         target: /opt/procon/Plugins
       - type: volume
-        source: log1
+        source: ${LOGS_PATH}
         target: /opt/procon/Logs
     security_opt:
       - no-new-privileges
     tty: true
     mem_limit: 3G
     mem_reservation: 2500M
-
 volumes:
   config1:
   plugin1:
