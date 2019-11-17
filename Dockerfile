@@ -1,8 +1,17 @@
-FROM mono:5.10
-RUN mkdir -p release && \
-	apt-get update && \
-	apt-get install unzip git wget -y && \
-	wget -O procon.zip https://api.myrcon.net/procon/download  && \
-	unzip -x procon.zip -d release/
+FROM mono:latest
 
-CMD [ "mono",  "./release/PRoCon.Console.exe" ]
+RUN mkdir -p /procon && \
+	apt-get update && \
+	apt-get install unzip wget -y && \
+	wget -O /tmp/procon.zip https://api.myrcon.net/procon/download && \
+	unzip -x /tmp/procon.zip -d /procon/
+    rm -f /tmp/procon.zip
+	
+WORKDIR /procon
+
+ADD Configs/ /procon
+ADD Plugins/ /procon
+
+EXPOSE 27260-27300
+
+CMD [ "mono",  "./PRoCon.Console.exe" ]
