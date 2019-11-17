@@ -12,6 +12,6 @@ WORKDIR /procon
 ADD Configs/ /procon
 ADD Plugins/ /procon
 
-EXPOSE 27260-27300
+EXPOSE 27260
 
 CMD [ "mono",  "./PRoCon.Console.exe" ]
