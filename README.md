@@ -16,5 +16,5 @@ docker-compose -f gsp.yml restart
 
 Stopping the docker
 ```
-docker-compose -f gsp.yml down -d
+docker-compose -f gsp.yml down
 ```
