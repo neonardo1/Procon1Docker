@@ -32,8 +32,6 @@ while [[ -n "$1" ]]; do
         BASE_DOCKER_REPO="$2"
      ;;
 
-    -g
-
     *) echo "Option $1 not recognized" ;;
 
     esac
