@@ -1,10 +1,12 @@
 #!/usr/bin/env bash
 
+BASE_DOCKER_REPO="/opt/Procon1Docker"
 TARGET_DIR=""
 INSTANCE_NAME=""
 DOCKER_GSP_CONFIG_PATH=""
-DOCKER_COMPOSE_FILE="/opt/Procon1Docker/docker-compose.yml"
+DOCKER_COMPOSE_FILE="${BASE_DOCKER_REPO}/docker-compose.yml"
 PROCON_LAYER_PORT=27260
+
 
 while [[ -n "$1" ]]; do
 
@@ -27,8 +29,10 @@ while [[ -n "$1" ]]; do
      ;;
 
     -z)
-        DOCKER_COMPOSE_FILE="$2"
+        BASE_DOCKER_REPO="$2"
      ;;
+
+    -g
 
     *) echo "Option $1 not recognized" ;;
 
@@ -74,8 +78,8 @@ PLUGINS_PATH=${ENV_PLUGINS_PATH}
 LOGS_PATH=${ENV_LOGS_PATH}
 EOF
 
-cp -r ./Configs/ ${ENV_CONFIG_PATH}
-cp -r ./Plugins/ ${ENV_PLUGINS_PATH}
+cp -r ${BASE_DOCKER_REPO}/Configs/ ${ENV_CONFIG_PATH}
+cp -r ${BASE_DOCKER_REPO}/Plugins/ ${ENV_PLUGINS_PATH}
 
 cat << EOF > ${TARGET_DIR}/gsp.yml
 version: '2.4'
