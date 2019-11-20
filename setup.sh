@@ -80,6 +80,7 @@ else
             echo "Directory created at '$TARGET_DIR'"
             echo "Now creating server folder at \"${ENV_CONFIG_PATH}/${GAMESERVER_FOLDER_NAME}\""
             mkdir -p ${ENV_CONFIG_PATH}/${GAMESERVER_FOLDER_NAME}
+            mkdir -p ${ENV_LOGS_PATH}
 
             if [[ -d "${ENV_CONFIG_PATH}/${GAMESERVER_FOLDER_NAME}" ]] ; then
                 echo "'${ENV_CONFIG_PATH}/${GAMESERVER_FOLDER_NAME}' created."
