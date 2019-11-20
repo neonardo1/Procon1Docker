@@ -111,7 +111,7 @@ services:
       file: ${DOCKER_COMPOSE_FILE}
       service: procon
     env_file:
-      - .env
+      - ${TARGET_DIR}/.env
 EOF
 
 cat << EOF > ${ENV_CONFIG_PATH}/accounts.cfg
