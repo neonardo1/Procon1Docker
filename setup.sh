@@ -101,7 +101,7 @@ LOGS_PATH=${ENV_LOGS_PATH}
 EOF
 
 cp -r ${BASE_DOCKER_REPO}/Configs/* ${ENV_CONFIG_PATH}
-cp -r ${BASE_DOCKER_REPO}/Plugins/* ${ENV_PLUGINS_PATH}
+cp -r ${BASE_DOCKER_REPO}/Plugins/ ${ENV_PLUGINS_PATH}
 
 cat << EOF > ${TARGET_DIR}/gsp.yml
 version: '2.4'
