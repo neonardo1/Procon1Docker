@@ -110,7 +110,7 @@ services:
     extends:
       file: ${DOCKER_COMPOSE_FILE}
       service: procon
-    env_file: ${TARGET_DIR}/.env
+    env_file: .env
 EOF
 
 cat << EOF > ${ENV_CONFIG_PATH}/accounts.cfg
