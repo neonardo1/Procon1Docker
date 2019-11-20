@@ -13,11 +13,12 @@ RUN rm -f /tmp/$FILE
 
 RUN groupadd -r -g $GID procon && useradd -r -g procon -u $UID procon
 RUN chown procon:procon -R $PROCONPATH
+RUN chmod -R 0777 $PROCONPATH
 
 WORKDIR $PROCONPATH
 
 USER procon:procon
 
-VOLUME ["$PROCONPATH/Configs", "$PROCONPATH/Plugins"]
+VOLUME ["$PROCONPATH/Configs", "$PROCONPATH/Plugins", "$PROCONPATH/Logs"]
 
 CMD [ "mono",  "./PRoCon.Console.exe" ]
