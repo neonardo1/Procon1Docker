@@ -4,7 +4,7 @@ ARG UID=10000
 ARG GID=10000
 ARG PROCONPATH="/opt/procon"
 ARG FILE="procon.zip"
-ARG DLURL="https://api.myrcon.net/procon/download?p=docker"
+ARG DLURL="https://api.myrcon.net/procon/download?p=docker&v=1.5.3.0"
 
 RUN mkdir -p $PROCONPATH
 RUN apt-get update && apt-get install unzip wget -yqq

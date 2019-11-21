@@ -4,7 +4,7 @@ services:
     container_name: ${INSTANCE_NAME}
     build:
       context: .
-    image: prophet731/procon:develop
+    image: prophet731/procon:latest
     restart: on-failure
     network_mode: bridge
     ports:
