@@ -7,7 +7,6 @@ More to be written later.
 ```
 git clone https://github.com/AdKats/Procon1Docker.git && \
 cd Procon1Docker && \
-git checkout develop && \
 ./setup.sh -d /path/to/where/you/want/configs -i InstanceName \
 -gip "GameServerIP" -gp "GameServerRconPort" -grp "RconPassword" \
 -p 27260
