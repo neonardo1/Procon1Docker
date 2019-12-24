@@ -23,18 +23,23 @@ mapped to the internal port `27260`
 
 # Getting Started
 
-Running the docker
+#### Running the docker
 ```
 docker-compose -f gsp.yml up -d
 ```
 
-Restarting the docker
+#### Restarting the docker
 ```
 docker-compose -f gsp.yml restart
 ```
 
-Stopping the docker
+#### Stopping the docker
 ```
 docker-compose -f gsp.yml down
 ```
 
+#### Updating the docker
+```
+chmod -R 0777 /path/to/where/you/want/configs && \
+docker-compose -f gsp.yml up -d --build
+```
