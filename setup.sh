@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-BASE_DOCKER_REPO="/opt/Procon1Docker"
+BASE_DOCKER_REPO=$(pwd)
 TARGET_DIR=""
 INSTANCE_NAME=""
 DOCKER_GSP_CONFIG_PATH=""
