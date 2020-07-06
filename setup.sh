@@ -12,7 +12,7 @@ PROCON_GAMESERVER_PASS=""
 PROCON_DEFAULT_LAYER_USER="DockerAdmin"
 PROCON_DEFAULT_LAYER_PASS="admin"
 
-while getopts lr:dt arg
+while getopts f:t:v arg;
 do 
     case $arg in
         d) TARGET_DIR="${OPTARG}";;
