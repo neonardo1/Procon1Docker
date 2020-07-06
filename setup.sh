@@ -12,9 +12,9 @@ PROCON_GAMESERVER_PASS=""
 PROCON_DEFAULT_LAYER_USER="DockerAdmin"
 PROCON_DEFAULT_LAYER_PASS="admin"
 
-while getopts u:a:f: option
+while getopts lr:dt arg
 do 
-    case "${option}" in
+    case $arg in
         d) TARGET_DIR="${OPTARG}";;
         i) INSTANCE_NAME="${OPTARG}";;
         c) DOCKER_GSP_CONFIG_PATH="${OPTARG}";;
