@@ -14,15 +14,15 @@ PROCON_DEFAULT_LAYER_PASS="admin"
 
 while getopts f:t:v arg;
 do 
-    case $arg in
-        td) TARGET_DIR="${OPTARG}";;
-        i) INSTANCE_NAME="${OPTARG}";;
-        c) DOCKER_GSP_CONFIG_PATH="${OPTARG}";;
-        p) PROCON_LAYER_PORT="${OPTARG}";;
-        gip) PROCON_GAMESERVER_IP="${OPTARG}";;
-        gp) PROCON_GAMESERVER_PORT="${OPTARG}";;
-        grp) PROCON_GAMESERVER_PASS="${OPTARG}";;
-        z) BASE_DOCKER_REPO="${OPTARG}";;
+    case ${arg} in
+        td) TARGET_DIR="${OPTARG}" ;;
+        i) INSTANCE_NAME="${OPTARG}" ;;
+        c) DOCKER_GSP_CONFIG_PATH="${OPTARG}" ;;
+        p) PROCON_LAYER_PORT="${OPTARG}" ;;
+        gip) PROCON_GAMESERVER_IP="${OPTARG}" ;;
+        gp) PROCON_GAMESERVER_PORT="${OPTARG}" ;;
+        grp) PROCON_GAMESERVER_PASS="${OPTARG}" ;;
+        z) BASE_DOCKER_REPO="${OPTARG}" ;;
     esac
 done
 
