@@ -12,45 +12,44 @@ PROCON_GAMESERVER_PASS=""
 PROCON_DEFAULT_LAYER_USER="DockerAdmin"
 PROCON_DEFAULT_LAYER_PASS="admin"
 
-while [[ -n "$1" ]]; do
+while getopts u:a:f: flag do
 
-    case "$1" in
+    case "${flag}" in
 
-    -d)
-        TARGET_DIR="$2"
+    d)
+        TARGET_DIR="${OPTARG}"
      ;;
 
-    -i)
-        INSTANCE_NAME="$2"
+    i)
+        INSTANCE_NAME="${OPTARG}"
     ;;
 
-    -c)
-        DOCKER_GSP_CONFIG_PATH="$2"
+    c)
+        DOCKER_GSP_CONFIG_PATH="${OPTARG}"
      ;;
 
-    -p)
-        PROCON_LAYER_PORT="$2"
+    p)
+        PROCON_LAYER_PORT="${OPTARG}"
      ;;
 
-    -gip)
-        PROCON_GAMESERVER_IP="$2"
+    gip)
+        PROCON_GAMESERVER_IP="${OPTARG}"
      ;;
 
-    -gp)
-        PROCON_GAMESERVER_PORT="$2"
+    gp)
+        PROCON_GAMESERVER_PORT="${OPTARG}"
     ;;
-    -grp)
-        PROCON_GAMESERVER_PASS="$2"
+    grp)
+        PROCON_GAMESERVER_PASS="${OPTARG}"
     ;;
 
-    -z)
-        BASE_DOCKER_REPO="$2"
+    z)
+        BASE_DOCKER_REPO="${OPTARG}"
      ;;
 
-    *) echo "Option $1 not recognized" ;;
+    *) echo "Option ${flag} not recognized" ;;
 
     esac
-    shift
 done
 
 # Remove a trailing slash if it was provided
