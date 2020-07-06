@@ -12,9 +12,9 @@ PROCON_GAMESERVER_PASS=""
 PROCON_DEFAULT_LAYER_USER="DockerAdmin"
 PROCON_DEFAULT_LAYER_PASS="admin"
 
-while getopts u:a:f: flag
+while getopts u:a:f: option
 do 
-    case "${flag}" in
+    case "${option}" in
         d) TARGET_DIR="${OPTARG}";;
         i) INSTANCE_NAME="${OPTARG}";;
         c) DOCKER_GSP_CONFIG_PATH="${OPTARG}";;
@@ -23,7 +23,6 @@ do
         gp) PROCON_GAMESERVER_PORT="${OPTARG}";;
         grp) PROCON_GAMESERVER_PASS="${OPTARG}";;
         z) BASE_DOCKER_REPO="${OPTARG}";;
-        *) echo "Option ${flag} not recognized";;
     esac
 done
 
