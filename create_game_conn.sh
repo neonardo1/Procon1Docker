@@ -25,7 +25,7 @@ done
 GAMESERVER_FOLDER_NAME="${PROCON_GAMESERVER_IP}_${PROCON_GAMESERVER_PORT}"
 GAMESERVER_FILE_NAME="${GAMESERVER_FOLDER_NAME}.cfg"
 
-cat << EOF >> /opt/procon/Configs/procon.cfg
+cat << EOF > /opt/procon/Configs/procon.cfg
 /////////////////////////////////////////////
 // This config will be overwritten by procon.
 /////////////////////////////////////////////
