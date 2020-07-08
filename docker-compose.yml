@@ -4,3 +4,5 @@ services:
     container_name: ${INSTANCE_NAME}
     build:
       context: .
+    tty: true
+    mem_limit: 3G
