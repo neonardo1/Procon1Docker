@@ -90,6 +90,4 @@ if [[ ! -f /opt/procon/Configs/.initialized ]]; then
     touch /opt/procon/Configs/.initialized
 fi
 
-
-
-exec "$@"
+mono ./PRoCon.Console.exe
