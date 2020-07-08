@@ -13,3 +13,5 @@ services:
     mem_limit: 2G
     restart: on-failure
     image: prophet731/procon:portainer
+    entrypoint: ["./entrypoint.sh", "-gip", "${PROCON_GAMESERVER_IP}", "-gp", "${PROCON_GAMESERVER_PORT}", "-grp", "${PROCON_GAMESERVER_PASS}"]
+    command: [ "mono",  "./PRoCon.Console.exe" ]

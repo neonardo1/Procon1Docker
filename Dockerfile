@@ -26,7 +26,3 @@ RUN chmod +x ./entrypoint.sh
 USER procon:procon
 
 VOLUME ["$PROCONPATH/Configs", "$PROCONPATH/Plugins", "$PROCONPATH/Logs"]
-
-ENTRYPOINT ["./entrypoint.sh", "-gip", "$PROCON_GAMESERVER_IP", "-gp", "$PROCON_GAMESERVER_PORT", "-grp", "$PROCON_GAMESERVER_PASS"]
-
-CMD [ "mono",  "./PRoCon.Console.exe" ]
