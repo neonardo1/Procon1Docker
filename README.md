@@ -25,17 +25,20 @@ mapped to the internal port `27260`
 
 #### Running the docker
 ```
-docker-compose -f gsp.yml up -d
+chmod -R 0777 /path/to/where/you/want/configs && \
+cd /path/to/where/you/want/configs && docker-compose -f gsp.yml up -d
 ```
 
 #### Restarting the docker
 ```
-docker-compose -f gsp.yml restart
+chmod -R 0777 /path/to/where/you/want/configs && \
+cd /path/to/where/you/want/configs && docker-compose -f gsp.yml restart
 ```
 
 #### Stopping the docker
 ```
-docker-compose -f gsp.yml down
+chmod -R 0777 /path/to/where/you/want/configs && \
+cd /path/to/where/you/want/configs && docker-compose -f gsp.yml down
 ```
 
 #### Updating the docker
