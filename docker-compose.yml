@@ -1,7 +1,6 @@
 version: '2.4'
 services:
   procon:
-    container_name: ${INSTANCE_NAME}
     build:
       context: .
       args:
