@@ -80,6 +80,14 @@ procon.protected.lists.settings False
 procon.protected.console.settings True False False True True True
 procon.protected.timezone_UTCoffset 0
 EOF
+
+cat << EOF > /opt/procon/Configs/accounts.cfg
+/////////////////////////////////////////////
+// This config will be overwritten by procon.
+/////////////////////////////////////////////
+procon.public.accounts.create "DockerAdmin" "admin"
+
+EOF
     fi
 }
 
