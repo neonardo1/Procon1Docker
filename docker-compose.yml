@@ -4,27 +4,3 @@ services:
     container_name: ${INSTANCE_NAME}
     build:
       context: .
-    image: prophet731/procon:latest
-    restart: on-failure
-    network_mode: bridge
-    ports:
-      - ${LAYER_PORT}:27260
-    volumes:
-      - type: volume
-        source: ${INSTANCE_NAME}
-        target: /opt/procon/Configs
-      - type: volume
-        source: ${INSTANCE_NAME}
-        target: /opt/procon/Plugins
-      - type: volume
-        source: ${INSTANCE_NAME}
-        target: /opt/procon/Logs
-    security_opt:
-      - no-new-privileges
-    tty: true
-    mem_limit: 3G
-    mem_reservation: 2500M
-volumes:
-  config1:
-  plugin1:
-  log1:
