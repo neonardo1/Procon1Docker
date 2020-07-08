@@ -3,12 +3,8 @@ services:
   procon:
     build:
       context: .
-      args:
-        PROCON_GAMESERVER_IP: ${PROCON_GAMESERVER_IP}
-        PROCON_GAMESERVER_PORT: ${PROCON_GAMESERVER_PORT}
-        PROCON_GAMESERVER_PASS: ${PROCON_GAMESERVER_PASS}
     ports:
-      - 27260
+      - "${LAYER_PORT}:27260"
     tty: true
     mem_limit: 2G
     restart: on-failure
