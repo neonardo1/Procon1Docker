@@ -75,6 +75,7 @@ else
 
         # Check to make sure directory was created
         if [[ -d "$TARGET_DIR" ]] ; then
+            chmod -R 0777 ${TARGET_DIR}
             echo "Directory created at '$TARGET_DIR'"
             echo "Now creating server folder at \"${ENV_CONFIG_PATH}/${GAMESERVER_FOLDER_NAME}\""
             mkdir -p ${ENV_CONFIG_PATH}/${GAMESERVER_FOLDER_NAME}
