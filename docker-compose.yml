@@ -6,3 +6,4 @@ services:
       context: .
     tty: true
     mem_limit: 3G
+    command: create_game_conn.sh -gip ${PROCON_GAMESERVER_IP} -gp ${PROCON_GAMESERVER_PORT} -grp ${PROCON_GAMESERVER_PASS}

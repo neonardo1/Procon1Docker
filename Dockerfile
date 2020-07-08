@@ -17,6 +17,8 @@ RUN chmod -R 0777 $PROCONPATH
 
 WORKDIR $PROCONPATH
 
+COPY ./create_game_conn.sh $PROCONPATH
+
 USER procon:procon
 
 VOLUME ["$PROCONPATH/Configs", "$PROCONPATH/Plugins", "$PROCONPATH/Logs"]

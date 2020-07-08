@@ -26,6 +26,39 @@ GAMESERVER_FOLDER_NAME="${PROCON_GAMESERVER_IP}_${PROCON_GAMESERVER_PORT}"
 GAMESERVER_FILE_NAME="${GAMESERVER_FOLDER_NAME}.cfg"
 
 cat << EOF >> /opt/procon/Configs/procon.cfg
+/////////////////////////////////////////////
+// This config will be overwritten by procon.
+/////////////////////////////////////////////
+procon.private.window.position Normal 193 42 1536 858
+procon.private.options.setLanguage "au.loc"
+procon.private.options.chatLogging False
+procon.private.options.consoleLogging False
+procon.private.options.eventsLogging False
+procon.private.options.pluginLogging False
+procon.private.options.autoCheckDownloadUpdates True
+procon.private.options.autoApplyUpdates False
+procon.private.options.autoCheckGameConfigsForUpdates True
+procon.private.options.showtrayicon True
+procon.private.options.minimizetotray False
+procon.private.options.closetotray False
+procon.private.options.allowanonymoususagedata True
+procon.private.options.runPluginsInSandbox False
+procon.private.options.allowAllODBCConnections False
+procon.private.options.allowAllSmtpConnections False
+procon.private.options.adminMoveMessage True
+procon.private.options.chatDisplayAdminName True
+procon.private.options.EnableAdminReason False
+procon.private.options.layerHideLocalPlugins True
+procon.private.options.layerHideLocalAccounts True
+procon.private.options.ShowRoundTimerConstantly False
+procon.private.options.ShowCfmMsgRoundRestartNext True
+procon.private.options.ShowDICESpecialOptions False
+procon.private.httpWebServer.enable False 27360 "0.0.0.0"
+procon.private.options.trustedHostDomainsPorts
+procon.private.options.statsLinkNameUrl Metabans http://metabans.com/search/%player_name%
+procon.private.options.pluginMaxRuntime 0 59
+procon.private.options.UsePluginOldStyleLoad False
+procon.private.options.enablePluginDebugging False
 procon.private.servers.add "${PROCON_GAMESERVER_IP}" ${PROCON_GAMESERVER_PORT} "${PROCON_GAMESERVER_PASS}"
 procon.private.servers.name "${PROCON_GAMESERVER_IP}" ${PROCON_GAMESERVER_PORT}
 procon.private.servers.autoconnect "${PROCON_GAMESERVER_IP}" ${PROCON_GAMESERVER_PORT}
