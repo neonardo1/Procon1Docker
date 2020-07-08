@@ -81,7 +81,7 @@ procon.protected.console.settings True False False True True True
 procon.protected.timezone_UTCoffset 0
 EOF
 
-cat << EOF > /opt/procon/Configs/accounts.cfg
+        cat << EOF > /opt/procon/Configs/accounts.cfg
 /////////////////////////////////////////////
 // This config will be overwritten by procon.
 /////////////////////////////////////////////
