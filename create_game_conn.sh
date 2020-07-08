@@ -25,7 +25,10 @@ done
 GAMESERVER_FOLDER_NAME="${PROCON_GAMESERVER_IP}_${PROCON_GAMESERVER_PORT}"
 GAMESERVER_FILE_NAME="${GAMESERVER_FOLDER_NAME}.cfg"
 
-cat << EOF > /opt/procon/Configs/procon.cfg
+if [[ ! -d "/opt/procon/Configs/${GAMESERVER_FOLDER_NAME}" ]] ; then
+    mkdir -p "/opt/procon/Configs/${GAMESERVER_FOLDER_NAME}"
+
+    cat << EOF > /opt/procon/Configs/procon.cfg
 /////////////////////////////////////////////
 // This config will be overwritten by procon.
 /////////////////////////////////////////////
@@ -60,11 +63,11 @@ procon.private.options.pluginMaxRuntime 0 59
 procon.private.options.UsePluginOldStyleLoad False
 procon.private.options.enablePluginDebugging False
 procon.private.servers.add "${PROCON_GAMESERVER_IP}" ${PROCON_GAMESERVER_PORT} "${PROCON_GAMESERVER_PASS}"
-procon.private.servers.name "${PROCON_GAMESERVER_IP}" ${PROCON_GAMESERVER_PORT}
+procon.private.servers.name "${PROCON_GAMESERVER_IP}" ${PROCON_GAMESERVER_PORT} ""
 procon.private.servers.autoconnect "${PROCON_GAMESERVER_IP}" ${PROCON_GAMESERVER_PORT}
 EOF
 
-cat << EOF > /opt/procon/Configs/${GAMESERVER_FOLDER_NAME}/${GAMESERVER_FILE_NAME}
+    cat << EOF > /opt/procon/Configs/${GAMESERVER_FOLDER_NAME}/${GAMESERVER_FILE_NAME}
 /////////////////////////////////////////////
 // This config will be overwritten by procon.
 /////////////////////////////////////////////
@@ -77,3 +80,5 @@ procon.protected.lists.settings False
 procon.protected.console.settings True False False True True True
 procon.protected.timezone_UTCoffset 0
 EOF
+
+fi
