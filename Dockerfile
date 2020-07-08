@@ -25,4 +25,4 @@ USER procon:procon
 
 VOLUME ["$PROCONPATH/Configs", "$PROCONPATH/Plugins", "$PROCONPATH/Logs"]
 
-CMD [ "mono",  "./PRoCon.Console.exe" ]
+ENTRYPOINT [ "mono",  "./PRoCon.Console.exe" ]
