@@ -10,14 +10,14 @@ services:
     ports:
       - ${LAYER_PORT}:27260
     volumes:
-      - type: bind
-        source: ${CONFIG_PATH}
+      - type: volume
+        source: ${INSTANCE_NAME}
         target: /opt/procon/Configs
-      - type: bind
-        source: ${PLUGINS_PATH}
+      - type: volume
+        source: ${INSTANCE_NAME}
         target: /opt/procon/Plugins
-      - type: bind
-        source: ${LOGS_PATH}
+      - type: volume
+        source: ${INSTANCE_NAME}
         target: /opt/procon/Logs
     security_opt:
       - no-new-privileges
