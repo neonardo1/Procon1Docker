@@ -5,9 +5,9 @@ ARG GID=10000
 ARG PROCONPATH="/opt/procon"
 ARG FILE="procon.zip"
 ARG DLURL="https://api.myrcon.net/procon/download"
-ARG PROCON_GAMESERVER_IP
-ARG PROCON_GAMESERVER_PORT
-ARG PROCON_GAMESERVER_PASS
+ENV PROCON_GAMESERVER_IP=""
+ENV PROCON_GAMESERVER_PORT=""
+ENV PROCON_GAMESERVER_PASS=""
 
 RUN mkdir -p $PROCONPATH
 RUN apt-get update && apt-get install unzip wget inetutils-ping -yqq

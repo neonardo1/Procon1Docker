@@ -1,8 +1,23 @@
 #!/usr/bin/env bash
 
-PROCON_GAMESERVER_IP=""
-PROCON_GAMESERVER_PORT=""
-PROCON_GAMESERVER_PASS=""
+#PROCON_GAMESERVER_IP=""
+#PROCON_GAMESERVER_PORT=""
+#PROCON_GAMESERVER_PASS=""
+
+if [[ -z "$PROCON_GAMESERVER_IP" ]]; then
+    echo "Gameserver IP Required"
+    exit 1
+fi
+
+if [[ -z "$PROCON_GAMESERVER_PORT" ]]; then
+    echo "Gameserver RCON Port Required"
+    exit 1
+fi
+
+if [[ -z "$PROCON_GAMESERVER_PASS" ]]; then
+    echo "Gameserver RCON Password Required"
+    exit 1
+fi
 
 while [[ -n "$1" ]]; do
     case "$1" in
