@@ -10,7 +10,7 @@ ARG PROCON_GAMESERVER_PORT
 ARG PROCON_GAMESERVER_PASS
 
 RUN mkdir -p $PROCONPATH
-RUN apt-get update && apt-get install unzip wget -yqq
+RUN apt-get update && apt-get install unzip wget inetutils-ping -yqq
 RUN wget -q -O /tmp/$FILE $DLURL && unzip -x /tmp/$FILE -d $PROCONPATH
 RUN rm -f /tmp/$FILE
 
