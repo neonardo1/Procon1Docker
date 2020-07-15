@@ -26,3 +26,5 @@ RUN chmod +x ./entrypoint.sh
 USER procon:procon
 
 VOLUME ["$PROCONPATH/Configs", "$PROCONPATH/Plugins", "$PROCONPATH/Logs"]
+
+ENTRYPOINT ./entrypoint.sh
