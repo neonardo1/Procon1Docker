@@ -43,6 +43,12 @@ GAMESERVER_FILE_NAME="${GAMESERVER_FOLDER_NAME}.cfg"
     if [[ ! -d "/opt/procon/Configs/${GAMESERVER_FOLDER_NAME}" ]] ; then
         mkdir -p "/opt/procon/Configs/${GAMESERVER_FOLDER_NAME}"
 
+        # Check again to make sure otherwise just quick.
+        if [[ ! -d "/opt/procon/Configs/${GAMESERVER_FOLDER_NAME}" ]]; then
+            echo "Directory couldn't be created. Exiting"
+            exit 1
+        fi
+
         cat << EOF > /opt/procon/Configs/procon.cfg
 /////////////////////////////////////////////
 // This config will be overwritten by procon.
