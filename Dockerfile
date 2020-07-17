@@ -6,7 +6,8 @@ ARG GID=10000
 ARG PROCONPATH="/opt/procon"
 ARG FILE="procon.zip"
 ARG DLURL="https://api.myrcon.net/procon/download"
-ARG PLUGINPACKURL="https://api.myrcon.net/plugins.zip"
+ARG PLUGINPACKURL="https://api.myrcon.net/plugins_pack1.zip"
+ARG PLUGINPACKNAME="plugins_pack1.zip"
 
 ENV PROCON_GAMESERVER_IP=""
 ENV PROCON_GAMESERVER_PORT=""
@@ -25,10 +26,10 @@ RUN wget -q -O /tmp/$FILE $DLURL && unzip -x /tmp/$FILE -d $PROCONPATH
 RUN rm -f /tmp/$FILE
 
 # Download a plugins pack of the most common used
-RUN wget -q -O /tmp/plugins.zip $PLUGINPACKURL && unzip -o -x /tmp/plugins.zip -d "$PROCONPATH/Plugins"
+RUN wget -q -O /tmp/$PLUGINPACKNAME $PLUGINPACKURL && unzip -o -x /tmp/$PLUGINPACKNAME -d "$PROCONPATH/Plugins"
 
 # Delete the temp file
-RUN rm -f /tmp/plugins.zip
+RUN rm -f /tmp/$PLUGINPACKNAME
 
 RUN groupadd -r -g $GID procon && useradd -r -g procon -u $UID procon
 RUN chown procon:procon -R $PROCONPATH
