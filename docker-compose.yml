@@ -11,3 +11,5 @@ services:
     image: prophet731/procon:latest
     dns: 1.1.1.1
     entrypoint: ./entrypoint.sh
+    volumes:
+      - "/etc/localtime:/etc/localtime:ro"
